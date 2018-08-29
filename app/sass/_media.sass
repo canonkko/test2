@@ -13,6 +13,18 @@
 
 /* Small Devices, Tablets */
 @media only screen and (max-width : 600px)
+	.roadmap__list-row
+
+		&:last-child
+			.roadmap__item
+
+				&:last-child 
+					.line
+						display: none
+
+		&:before
+			display: none
+			
 	.roadmap__list
 		display: block
 	

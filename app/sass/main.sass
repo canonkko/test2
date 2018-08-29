@@ -47,17 +47,71 @@ ul
 
 .container
 	max-width: 1024px
-	margin: 50px auto 0
+	margin: 0 auto
 	padding: 0 15px
+
+.roadmap-wrapper
+	margin-top: 50px
+
+.roadmap
+	margin-top: 30px
+
+.roadmap__list-row
+	position: relative
+
+	&.active
+		~ li
+			&:before
+				background-color: #E1DDFD
+			.line
+				background-color: #E1DDFD
+			.roadmap__item
+				&:before
+					background-color: #E1DDFD
+					
+		&:after
+			content: ''
+			position: absolute
+			z-index: -5
+			top: -1px
+			left: auto
+			right: 0
+			width: 30%
+			height: 1px
+			background-color: #E1DDFD
+
+	&:last-child
+		&.active
+			&:after
+				display: none
+		.roadmap__item
+			border-top: 1px solid #fff
+			margin-top: -1px
+			&:last-child
+				.line
+					width: 15px
+		&:before
+			right: auto
+			left: 0
+			width: 23%
+	&:before
+		content: ''
+		position: absolute
+		z-index: -5
+		top: -1px
+		left: 0
+		right: 0
+		height: 1px
+		background-color: $blue
 
 .roadmap__list
 	display: flex
 	flex-wrap: wrap
-	margin: 40px -15px 0
+	margin: 20px -15px 0
+	
 
 .roadmap__item
 	padding: 0 15px
-	margin-bottom: 30px
 	flex-basis: calc(100% / 3 - 30px)
 	position: relative
 	cursor: pointer
@@ -69,10 +123,6 @@ ul
 	span
 		font-weight: bold
 		+trs(color)
-
-	&:last-child
-		.line
-			display: none
 
 	&:before
 		content: ''
